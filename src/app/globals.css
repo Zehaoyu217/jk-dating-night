@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #FFF3E9;
+  --coral: #E98074;
+  --coral-hover: #e85a4f;
+  --navy: #26458B;
+  --pink: #E5659A;
+  --text-dark: #1c1c1c;
+  --text-muted: #4a4a4a;
+  --card-shadow: 0 10px 40px rgba(0, 25, 69, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-coral: var(--coral);
+  --color-coral-hover: var(--coral-hover);
+  --color-navy: var(--navy);
+  --color-pink: var(--pink);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-float-in {
+  animation: float-in 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 0.8s ease-in-out infinite alternate;
 }
